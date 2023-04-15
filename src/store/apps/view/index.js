@@ -23,8 +23,8 @@ const viewSlice = createSlice({
   name: "view",
   initialState,
   reducers: {
-    changeView: () => {
-      //TODO - change the view
+    changeView: (state, { payload }) => {
+      state.currentView = payload
     },
   },
 });
@@ -32,4 +32,4 @@ const viewSlice = createSlice({
 //export actions
 export const { changeView } = viewSlice.actions;
 
-export default viewSlice.reducer
+export default viewSlice.reducer;

@@ -18,11 +18,19 @@ const initialState = {
       header: {
         title: "Ulubione utwory",
       },
+      sortOptions: {
+        id: 'ID rosnąco',
+        name: 'Nazwa rosnąco',
+      }
     },
     en: {
       header: {
         title: "Favourite music",
       },
+      sortOptions: {
+        id: 'ID inc',
+        name: 'Nazwa inc',
+      }
     },
   },
 };
