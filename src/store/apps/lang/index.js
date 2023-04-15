@@ -14,21 +14,35 @@ const initialState = {
     },
   ],
   translations: {
-    pl: {},
-    en: {},
+    pl: {
+      header: {
+        title: "Ulubione utwory",
+      },
+    },
+    en: {
+      header: {
+        title: "Favourite music",
+      },
+    },
   },
 };
 
 //translation Slice
-export const langSlice = createSlice({
+const langSlice = createSlice({
   name: "language",
   initialState,
   reducers: {
-    changeLang: () => {
-      //TODO changeLang logic
+    changeLang: (state, { payload }) => {
+      state.currentLang = payload;
     },
   },
 });
 
 //export actions
 export const { changeLang } = langSlice.actions;
+
+//export current translation
+export const selectTranslation = (state) =>
+  state.language.translations[state.language.currentLang];
+
+export default langSlice.reducer;

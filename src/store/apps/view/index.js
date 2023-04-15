@@ -19,7 +19,7 @@ const initialState = {
 };
 
 //viewSlice
-export const viewSlice = createSlice({
+const viewSlice = createSlice({
   name: "view",
   initialState,
   reducers: {
@@ -31,3 +31,5 @@ export const viewSlice = createSlice({
 
 //export actions
 export const { changeView } = viewSlice.actions;
+
+export default viewSlice.reducer
