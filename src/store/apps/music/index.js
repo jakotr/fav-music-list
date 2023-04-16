@@ -17,6 +17,7 @@ const initialState = {
     },
   ],
   id: 2,
+  currentSortOption: "id-asc",
 };
 
 //music Slice
@@ -35,18 +36,30 @@ const musicSlice = createSlice({
       state.id += 1;
     },
     removeItem: (state, { payload }) => {
-      state.list = state.list.filter((item) => item.id !== payload)
+      state.list = state.list.filter((item) => item.id !== payload);
     },
     toggleBest: (state, { payload }) => {
-      state.list = state.list.map((item) => item.id === payload ? {...item, isBest: !item.isBest} : item)
+      state.list = state.list.map((item) =>
+        item.id === payload ? { ...item, isBest: !item.isBest } : item
+      );
     },
     sortList: (state, { payload }) => {
-      //TODO - toggleBest
+      console.log(payload);
+      const { key, order } = payload;
+      state.list = state.list.sort((a, b) => {
+        if (a[key] < b[key]) {
+          return order === "asc" ? -1 : 1;
+        } else if (a[key] > b[key]) {
+          return order === "asc" ? 1 : -1;
+        } else {
+          return 0;
+        }
+      });
     },
   },
 });
 
 //export actions
-export const { addItem, removeItem, toggleBest } = musicSlice.actions;
+export const { addItem, removeItem, toggleBest, sortList } = musicSlice.actions;
 
 export default musicSlice.reducer;

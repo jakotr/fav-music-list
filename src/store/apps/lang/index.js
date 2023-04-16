@@ -19,8 +19,12 @@ const initialState = {
         title: "Ulubione utwory",
       },
       sortOptions: {
-        id: "ID rosnąco",
-        name: "Nazwa rosnąco",
+        "id-asc": "ID rosnąco",
+        "id-desc": "ID malejąco",
+        "name-asc": "Nazwa rosnąco",
+        "name-desc": "Nazwa malejąco",
+        "date-asc": "Data rosnąco",
+        "date-desc": "Data malejąco",
       },
       list: {
         name: "Nazwa",
@@ -38,8 +42,12 @@ const initialState = {
         title: "Favourite music",
       },
       sortOptions: {
-        id: "ID inc",
-        name: "Nazwa inc",
+        "id-asc": "ID ascending",
+        "id-desc": "ID descending",
+        "name-asc": "Name ascending",
+        "name-desc": "Name descending",
+        "date-asc": "Date ascending",
+        "date-desc": "Date descending",
       },
       list: {
         name: "Name",
