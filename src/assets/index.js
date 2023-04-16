@@ -3,4 +3,6 @@ import list from "./list.png";
 
 import logo from "./logo.png";
 
-export { grid, list, logo };
+import vinyl from "./vinyl.png";
+
+export { grid, list, logo, vinyl };
