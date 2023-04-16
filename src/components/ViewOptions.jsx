@@ -16,7 +16,7 @@ const ViewOptions = () => {
           key={name}
           onClick={() => dispatch(changeView(name))}
           className={`${
-            currentView === name ? "bg-stone-50" : ""
+            currentView === name ? "bg-stone-50" : "invert"
           } w-8 h-8 flex items-center justify-center rounded-full transition`}
         >
           <img src={icon} alt={name} width="16px" height="16px" />

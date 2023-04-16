@@ -4,7 +4,10 @@
 
 @layer components {
   .section {
-    @apply bg-lightGray md:py-4 py-2 md:px-4 px-2 rounded-lg mb-1 text-stone-900
+    @apply bg-stone-200 md:py-4 py-2 md:px-4 px-2 text-stone-900
+  }
+  .container {
+    @apply w-[95%]
   }
 }
 

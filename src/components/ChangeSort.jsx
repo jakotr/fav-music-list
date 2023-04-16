@@ -23,15 +23,19 @@ const ChangeSort = () => {
     label: sortOptions[option],
   }));
 
+  //for render issues
+  const getCurrentFullOptionValueObject = options.find(
+    (opt) => opt.value === currentSortOption
+  );
+
   const handleChange = (e) => {
-    // const [key, order] = e.value.split("-");
     dispatch(sortList(e.value));
   };
 
   return (
     <div>
       <Dropdown
-        value={currentSortOption}
+        value={getCurrentFullOptionValueObject}
         onChange={(e) => handleChange(e)}
         options={options}
         controlClassName="rounded-xl text-sm py-[5px] pl-2 pr-8"

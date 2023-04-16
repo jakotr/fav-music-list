@@ -32,7 +32,7 @@ const AddItemList = () => {
   return (
     <>
       <button
-        className="md:text-4xl text-2xl"
+        className="md:text-4xl text-2xl text-white"
         onClick={() => setShowForm(true)}
       >
         <AiOutlinePlusCircle />

@@ -36,7 +36,7 @@ const musicSlice = createSlice({
       );
     },
     sortList: (state, { payload }) => {
-      const [key, order] = payload;
+      const [key, order] = payload.split('-');
       state.list = state.list.sort((a, b) => {
         if (a[key] < b[key]) {
           return order === "asc" ? -1 : 1;

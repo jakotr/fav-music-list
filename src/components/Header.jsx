@@ -16,7 +16,7 @@ const Header = () => {
   } = useSelector(selectTranslation);
 
   return (
-    <header className="section rounded-none">
+    <header className="section rounded-none mb-4">
       <div className="container flex justify-between items-center">
         <span className="logo flex items-center gap-4">
           <img src={logo} alt="Logo" width={"48px"} height={"48px"} />

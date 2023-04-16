@@ -24,9 +24,9 @@ const List = () => {
   const isListView = currentView === "list";
 
   return (
-    <main className="container">
+    <main className="container min-h-screen shadow-2xl">
       <ListOptions />
-      <section className="section bg-transparent px-0">
+      <section className="section bg-transparent px-0 ">
         {list.length > 0 ? (
           <div className={`${!isListView && "gap-5 grid grid-cols-grid"}`}>
             {isListView && (
