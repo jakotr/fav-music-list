@@ -7,7 +7,8 @@ import { changeLang } from "../store/apps/lang";
 
 const LangDropdown = () => {
   const dispatch = useDispatch();
-
+  
+  //get current language and the whole list
   const { currentLang, languages } = useSelector((state) => state.language);
 
   return (

@@ -1,23 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//config
+import { DUMMY_DATA } from "../../../config";
+
+//utils
+import { formatTodayDate } from "../../../utils";
+
 //initial State
 const initialState = {
-  list: [
-    {
-      id: 1,
-      name: "Don't stop believing",
-      isBest: true,
-      date: new Date("2020-05-14").toLocaleDateString(),
-    },
-    {
-      id: 2,
-      name: "We are the champion",
-      isBest: false,
-      date: new Date("2020-05-12").toLocaleDateString(),
-    },
-  ],
-  id: 2,
+  list: DUMMY_DATA,
   currentSortOption: "id-asc",
+  idInc: DUMMY_DATA.length,
 };
 
 //music Slice
@@ -26,14 +19,13 @@ const musicSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, { payload }) => {
-      console.log(payload);
       state.list.push({
-        id: state.id + 1,
+        id: state.idInc + 1,
         name: payload,
         isBest: false,
-        date: new Date().toLocaleDateString(),
+        date: formatTodayDate(),
       });
-      state.id += 1;
+      state.idInc += 1;
     },
     removeItem: (state, { payload }) => {
       state.list = state.list.filter((item) => item.id !== payload);
@@ -44,8 +36,7 @@ const musicSlice = createSlice({
       );
     },
     sortList: (state, { payload }) => {
-      console.log(payload);
-      const { key, order } = payload;
+      const [key, order] = payload;
       state.list = state.list.sort((a, b) => {
         if (a[key] < b[key]) {
           return order === "asc" ? -1 : 1;
@@ -55,6 +46,7 @@ const musicSlice = createSlice({
           return 0;
         }
       });
+      state.currentSortOption = payload;
     },
   },
 });

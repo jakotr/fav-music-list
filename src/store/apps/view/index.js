@@ -24,7 +24,7 @@ const viewSlice = createSlice({
   initialState,
   reducers: {
     changeView: (state, { payload }) => {
-      state.currentView = payload
+      state.currentView = payload;
     },
   },
 });

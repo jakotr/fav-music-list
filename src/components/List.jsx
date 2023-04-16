@@ -28,7 +28,7 @@ const List = () => {
       <ListOptions />
       <section className="section bg-transparent px-0">
         {list.length > 0 ? (
-          <div className={`${!isListView && 'gap-5 grid grid-cols-grid'}`}>
+          <div className={`${!isListView && "gap-5 grid grid-cols-grid"}`}>
             {isListView && (
               <div className="w-full grid grid-cols-list gap-2 px-3 pb-1 border-b border-darkGray">
                 <span>#</span>

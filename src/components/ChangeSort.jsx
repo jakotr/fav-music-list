@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from "react-dropdown";
 
@@ -6,15 +5,8 @@ import Dropdown from "react-dropdown";
 import { selectTranslation } from "../store/apps/lang";
 import { sortList } from "../store/apps/music";
 
-//sort options
-const SORT_OPTIONS = [
-  "id-asc",
-  "id-desc",
-  "name-asc",
-  "name-desc",
-  "date-asc",
-  "date-desc",
-];
+//config
+import { SORT_OPTIONS } from "../config";
 
 const ChangeSort = () => {
   const dispatch = useDispatch();
@@ -31,12 +23,9 @@ const ChangeSort = () => {
     label: sortOptions[option],
   }));
 
-  //state
-  const [sortOption, setSortOption] = useState("");
-
   const handleChange = (e) => {
-    const [key, order] = e.value.split("-");
-    dispatch(sortList({key, order}));
+    // const [key, order] = e.value.split("-");
+    dispatch(sortList(e.value));
   };
 
   return (
