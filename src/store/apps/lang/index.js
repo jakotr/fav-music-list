@@ -21,6 +21,11 @@ const initialState = {
       sortOptions: {
         id: 'ID rosnąco',
         name: 'Nazwa rosnąco',
+      },
+      list: {
+        name: 'Nazwa',
+        date: 'Data',
+        empty: 'Lista jest pusta',
       }
     },
     en: {
@@ -30,6 +35,11 @@ const initialState = {
       sortOptions: {
         id: 'ID inc',
         name: 'Nazwa inc',
+      },
+      list: {
+        name: 'Name',
+        date: 'Date',
+        empty: 'List is empty',
       }
     },
   },
